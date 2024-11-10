@@ -1,0 +1,6 @@
+﻿  Решение.c
+C:\Users\ПК\source\repos\16\16\Решение.c(9,20): warning C4013: exp: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\ПК\source\repos\16\16\Решение.c(9,34): warning C4013: pow: нет определения; предполагается "extern" с возвратом типа "int"
+C:\Users\ПК\source\repos\16\16\Решение.c(62,3): warning C4098: main: функция типа "void", возвращающая значение
+C:\Users\ПК\source\repos\16\16\Решение.c(21,1): warning C4716: put_elements: должна возвращать значение
+  16.vcxproj -> C:\Users\ПК\source\repos\16\x64\Debug\16.exe
