@@ -1,0 +1,11 @@
+﻿  Решение.c
+C:\Users\student\source\repos\Owolon\16\16\16\Решение.c(153,12): warning C4133: функция: несовместимые типы - из "double *" в "int *"
+C:\Users\student\source\repos\Owolon\16\16\16\Решение.c(153,23): warning C4047: функция: "int *" отличается по уровням косвенного обращения от "int"
+C:\Users\student\source\repos\Owolon\16\16\16\Решение.c(153,23): warning C4024: insert: различные типы для формального и фактического параметров 2
+C:\Users\student\source\repos\Owolon\16\16\16\Решение.c(165,11): warning C4476: "scanf_s": неизвестный символ поля типа " " в описателе формата
+C:\Users\student\source\repos\Owolon\16\16\16\Решение.c(165,18): warning C4474: "scanf_s" : для строки формата передано слишком много аргументов
+      C:\Users\student\source\repos\Owolon\16\16\16\Решение.c(165,18):
+      заполнители и их параметры ожидают переменное число аргументов в количестве 0, но было предоставлено 2
+  
+C:\Users\student\source\repos\Owolon\16\16\16\Решение.c(153,1): error C4700: использована неинициализированная локальная переменная "num"
+C:\Users\student\source\repos\Owolon\16\16\16\Решение.c(153,1): error C4700: использована неинициализированная локальная переменная "index"
