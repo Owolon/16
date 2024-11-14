@@ -2,8 +2,8 @@
 #include <locale.h>
 #include <stdlib.h>
 #include <math.h>
-#define XMAX 10
-#define XMIN -10
+#define XMAX 100
+#define XMIN -100
 
 double* full_elements(double* ptr_array, int size)
 {
@@ -13,7 +13,8 @@ double* full_elements(double* ptr_array, int size)
 		*temp_ptr = XMIN + 1.f * (XMAX - XMIN) * rand() / RAND_MAX;
 		temp_ptr++;
 	}
-	return temp_ptr;
+	ptr_array=temp_ptr;
+	return ptr_array;
 }
 double* put_elements(double* ptr_array, int size)
 {
@@ -21,6 +22,15 @@ double* put_elements(double* ptr_array, int size)
 	{
 		printf("%.1lf\n", *ptr_array);
 		ptr_array++;
+	}
+	return 0;
+}
+double* put(double* array, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		printf("%.1lf\n", *array);
+		array++;
 	}
 	return 0;
 }
@@ -36,7 +46,6 @@ double* calc_elements(double* ptr_array, int size)
 
 int delete_k(double* ptr_array, int size, int k)
 {
-
 	int n = size - 1;
 	for (int i = k; i < (size - 1); i++)
 	{
@@ -44,32 +53,48 @@ int delete_k(double* ptr_array, int size, int k)
 	}
 	return n;
 }
-int delete(double* ptr_array, int size, double nach)
+
+double* delete(double* ptr_array, double* array, int size,  double nach)
 {
-	int n = size - 1;
-	for (int i = 0; i < (size - 1); i++)
+	for (int i = 0; i < size; i++)
 	{
-		if (*ptr_array >= nach)
+		if (*ptr_array < nach)
 		{
-			ptr_array[i] = ptr_array[i + 1];
+			*array = *ptr_array;
+			array++;
+		}
+		else
+		{
+			*array = 0.;
+			array++;
+		}
+		ptr_array++;
+	}
+	return array;
+}
+int* insert(int* ptr_array, int* size, int num)
+{
+	int min = 0;
+	for (int i = 0; i < *size; i++)
+	{
+		if (min < *ptr_array)
+		{
+			min = i;//Индекс минимального значения.
 		}
 	}
-	return n;
-}
-int* insert(int* ptr_array, int* size, int index, int num)
-{
 	int size_n = (*size) + 1;
-	if (ptr_array == NULL) 
+	if (ptr_array == NULL)
+		printf("Ошибка выделения памяти.");
 		return NULL;
-	int* ptr_arr_n = (int*)realloc(ptr_array, size_n * sizeof(int));
-	if ((ptr_arr_n) == NULL) 
+	int* ptr_arr_n = (int*)malloc(size_n * sizeof(int));
+	if (ptr_arr_n == NULL)
 		return ptr_array;
 	ptr_array = ptr_arr_n;
-	for (int i = size_n - 1; i > index; i--)
-		ptr_array[i] = ptr_array[i - 1];
-	ptr_array[index] = num;
+	for (int i = size_n - 1; i > min; i--)//Увеличение массива
+		ptr_arr_n[i] = ptr_arr_n[i - 1];
+	ptr_arr_n[min+1] = num;
 	*size = size_n;
-	return ptr_array;
+	return ptr_arr_n;
 }
 void main()
 {
@@ -90,6 +115,7 @@ void main()
 	{
 		printf("Успешно");
 	}
+
 	array = (double*)malloc(size * sizeof(double)); //Новая область памяти массив
 	if (array == NULL)
 	{
@@ -97,14 +123,16 @@ void main()
 	}
 	else
 	{
-		printf("Успешно");
+		printf("\nУспешно");
 	}
+
+
 	while (1)
 	{
 		int a;
 
 		do {
-			printf("\nМеню.\n\t1.Генерация дин-го массива.\n\t2.Вывод зна-ий массива.\n\t3.Удаление эл-та.\n\t4.Удаление эл-ов превыщающих заданое зна-е\n\t5.Отбрасывание дроб-ой части.\n\t6.Вставка зна-я\n\t0.Выход\n");
+			printf("\nМеню.\n\t1.Генерация дин-го массива.\n\t2.Вывод зна-ий массива.\n\t3.Удаление эл-та.\n\t4.Удаление эл-ов превыщающих заданое зна-е\n\t5.Отбрасывание дроб-ой части.\n\t6.Вставка числа.\n\t0.Выход\n");
 			scanf_s("%d", &a);
 			switch (a)
 			{
@@ -136,7 +164,9 @@ void main()
 				double nach;
 				printf("Введите число (удаляться будут большие знач-я) > ");
 				scanf_s("%lf", &nach);
-				delete(ptr_array, size, nach);
+				delete(ptr_array, array, size, nach);
+				put(array, size);
+				ptr_array = array;
 				printf("Элементы удалены.");
 				break;
 			}
@@ -148,12 +178,19 @@ void main()
 			}
 			case 6:
 			{
-				int index;
 				int num;
-				insert(ptr_array, size, index, num);
+				printf("Введите число для вставки > ");
+				scanf_s("%d", &num);
+				insert(ptr_array, size, num);
+				put(ptr_array, size);
+				printf("Число добавлено.");
+				break;
 			}
 			case 0:
 			{
+				free(ptr_array);
+				free(array);
+				printf("Память освобождена.");
 				break;
 			}
 			default:
