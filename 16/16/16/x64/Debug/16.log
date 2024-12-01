@@ -1,10 +1,11 @@
 ﻿  Решение.c
-C:\Users\student\source\repos\Owolon\16\16\16\16\Решение.c(184,12): warning C4133: функция: несовместимые типы - из "double *" в "int *"
-C:\Users\student\source\repos\Owolon\16\16\16\16\Решение.c(184,23): warning C4047: функция: "int *" отличается по уровням косвенного обращения от "int"
-C:\Users\student\source\repos\Owolon\16\16\16\16\Решение.c(184,23): warning C4024: insert: различные типы для формального и фактического параметров 2
-C:\Users\student\source\repos\Owolon\16\16\16\16\Решение.c(202,11): warning C4476: "scanf_s": неизвестный символ поля типа " " в описателе формата
-C:\Users\student\source\repos\Owolon\16\16\16\16\Решение.c(202,18): warning C4474: "scanf_s" : для строки формата передано слишком много аргументов
-      C:\Users\student\source\repos\Owolon\16\16\16\16\Решение.c(202,18):
+C:\Users\ПК\source\repos\Owolon\16\16\16\16\Решение.c(184,24): warning C4133: функция: несовместимые типы - из "double *" в "int *"
+C:\Users\ПК\source\repos\Owolon\16\16\16\16\Решение.c(184,35): warning C4047: функция: "int *" отличается по уровням косвенного обращения от "int"
+C:\Users\ПК\source\repos\Owolon\16\16\16\16\Решение.c(184,35): warning C4024: insert: различные типы для формального и фактического параметров 2
+C:\Users\ПК\source\repos\Owolon\16\16\16\16\Решение.c(184,15): warning C4133: =: несовместимые типы - из "int *" в "double *"
+C:\Users\ПК\source\repos\Owolon\16\16\16\16\Решение.c(202,11): warning C4476: "scanf_s": неизвестный символ поля типа " " в описателе формата
+C:\Users\ПК\source\repos\Owolon\16\16\16\16\Решение.c(202,18): warning C4474: "scanf_s" : для строки формата передано слишком много аргументов
+      C:\Users\ПК\source\repos\Owolon\16\16\16\16\Решение.c(202,18):
       заполнители и их параметры ожидают переменное число аргументов в количестве 0, но было предоставлено 2
   
-  16.vcxproj -> C:\Users\student\Source\Repos\Owolon\16\16\16\x64\Debug\16.exe
+  16.vcxproj -> C:\Users\ПК\source\repos\Owolon\16\16\16\x64\Debug\16.exe

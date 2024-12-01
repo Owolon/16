@@ -114,7 +114,32 @@ void main()
 			}
 		} while (a != 0);
 		printf("Продолжить? yes|no > ");
-		scanf_s("% c", &f, sizeof(f));
+		scanf_s("% c", &f);
 		if (f == 'n') break;
+
+		//DZ
+		double* ptr_c;
+
+		ptr_c = (double*)malloc(size * sizeof(double));
+		if (ptr_array == NULL)
+		{
+			printf("Ошибка выделения памяти.");
+		}
+		else
+		{
+			printf("Успешно");
+		}
+		double* ptr_b;
+
+		ptr_b = (double*)malloc(size * sizeof(double));
+		if (ptr_array == NULL)
+		{
+			printf("Ошибка выделения памяти.");
+		}
+		else
+		{
+			printf("Успешно");
+		}
 	}
+
 }

@@ -181,7 +181,7 @@ void main()
 				int num;
 				printf("Введите число для вставки > ");
 				scanf_s("%d", &num);
-				insert(ptr_array, size, num);
+				ptr_array = insert(ptr_array, size, num);
 				put(ptr_array, size);
 				printf("Число добавлено.");
 				break;
